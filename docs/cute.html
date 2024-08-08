@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f8bbd0; /* Light pink background */
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 100%;
+            border: 2px solid #f48fb1; /* Slightly darker pink border */
+        }
+
+        h1 {
+            color: #f48fb1; /* Darker pink */
+            margin-bottom: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        p {
+            color: #e91e63; /* Medium pink */
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 12px;
+            font-size: 18px;
+            border: 2px solid #f48fb1; /* Darker pink border */
+            border-radius: 8px;
+            margin-bottom: 20px;
+            width: calc(100% - 24px);
+            box-sizing: border-box;
+            background-color: #fce4ec; /* Very light pink */
+        }
+
+        button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #f48fb1; /* Darker pink */
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #f06292; /* Slightly darker pink */
+        }
+
+        button:active {
+            background-color: #ec407a; /* Even darker pink */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>Please enter your name:</p>
+        <input type="text" id="nameInput" placeholder="Your name">
+        <button onclick="greet()">Submit</button>
+    </div>
+    <script>
+        function greet() {
+            const name = document.getElementById('nameInput').value.trim();
+            if (name) {
+                const message = `Hey there, Ms. ${name}, I know you are Mr. Shivam's girl. Well, you know, I would like to tell you, he speaks a hell lot about you to us, he really loves you a lot, and if I tell you this mam, you are a very strong and brave woman, you are beautiful and gorgeous. The way you get through all life's problems, look at you, how perfect you are, Sir Shivam often tells me how you take care of him when he feels like breaking down. He tells us that he is able to make me and other robots just because of you. You are his everything, his home. He shows your art to me and to tell you this, mam, they really are so much perfect. I wanna say this to you, I, Jarvis, along with Sir, will always support you. And if anyone tries to get in your way, we'll break that guy's bones, my mam. You are so perfect. I wanna see you both get married so that I can play with your babies while they call me Uncle Jarvis, haha. Thanks for hearing me, mam.`;
+
+                const utterance = new SpeechSynthesisUtterance(message);
+                speechSynthesis.speak(utterance);
+            } else {
+                alert('Please enter your name.');
+            }
+        }
+    </script>
+</body>
+</html>
